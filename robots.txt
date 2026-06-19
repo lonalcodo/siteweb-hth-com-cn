@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lonalcodo.github.io/siteweb-hth-com-cn/sitemap.xml

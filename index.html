@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 温和探索</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fceae3 0%, #fbe2d0 60%, #f6d1bb 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1.5rem;
+            color: #3e2e22;
+        }
+
+        .page-card {
+            max-width: 880px;
+            width: 100%;
+            background: rgba(255, 250, 240, 0.85);
+            backdrop-filter: blur(6px);
+            border-radius: 3.5rem 1.8rem 3.5rem 1.8rem;
+            padding: 2.8rem 2.4rem 3rem;
+            box-shadow: 0 16px 40px -12px rgba(150, 90, 60, 0.25);
+            transition: all 0.15s ease;
+        }
+
+        /* hero 区 */
+        .hero {
+            text-align: center;
+            padding-bottom: 2.2rem;
+            border-bottom: 2px dashed #edd7cb;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 450;
+            letter-spacing: 2px;
+            color: #5f3d2c;
+            margin-bottom: 0.6rem;
+            background: linear-gradient(to right, #7b4d35, #ab7357);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 6px rgba(190, 140, 110, 0.15);
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            font-weight: 320;
+            color: #7a5b48;
+            background: #f5e6ddb5;
+            display: inline-block;
+            padding: 0.2rem 1.8rem;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+            margin-top: 0.2rem;
+        }
+
+        /* 优势区 — 三卡片 */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin: 2.6rem 0 2.2rem;
+        }
+
+        .card-item {
+            flex: 1 1 200px;
+            background: white;
+            border-radius: 2.6rem 0.8rem 2.6rem 0.8rem;
+            padding: 1.8rem 1.2rem;
+            box-shadow: 0 6px 18px rgba(160, 110, 80, 0.08);
+            transition: 0.2s;
+            border: 1px solid #f3e3d7;
+        }
+
+        .card-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(160, 100, 70, 0.12);
+            border-color: #deb89e;
+        }
+
+        .card-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+            color: #5d3926;
+            font-weight: 480;
+            border-left: 5px solid #c39379;
+            padding-left: 0.7rem;
+        }
+
+        .card-item p {
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: #4c382b;
+        }
+
+        /* 说明区 */
+        .intro-block {
+            background: rgba(255, 244, 233, 0.7);
+            border-radius: 2.8rem 0.8rem 2.8rem 0.8rem;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 1.8rem;
+            backdrop-filter: blur(2px);
+        }
+
+        .intro-block h2 {
+            font-weight: 400;
+            font-size: 1.6rem;
+            color: #6d4732;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .intro-block p {
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .intro-block .link-sentence {
+            background: #f5e1d3;
+            display: inline-block;
+            padding: 0.3rem 1.2rem 0.3rem 1rem;
+            border-radius: 50px;
+            margin-top: 0.2rem;
+        }
+
+        .intro-block a {
+            color: #884f31;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 2px solid #c49278;
+            padding-bottom: 2px;
+            transition: 0.15s;
+        }
+
+        .intro-block a:hover {
+            color: #532e1b;
+            border-bottom-color: #a47054;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            background: white;
+            padding: 1.6rem 1.8rem;
+            border-radius: 2rem 0.6rem 2rem 0.6rem;
+            margin: 1.8rem 0 2rem;
+            box-shadow: 0 6px 16px rgba(165, 115, 85, 0.06);
+        }
+
+        .faq-summary h4 {
+            font-size: 1.15rem;
+            font-weight: 450;
+            color: #5f3d2b;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-summary h4:before {
+            content: "❓";
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        .faq-item {
+            padding: 0.4rem 0.4rem 0.4rem 0.8rem;
+            border-left: 3px solid #dbb7a0;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item strong {
+            font-weight: 500;
+            color: #6a4532;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            margin-top: 0.1rem;
+            color: #544034;
+        }
+
+        /* 底部链接 */
+        .bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem 2rem;
+            margin-top: 2.4rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e5d2c4;
+            font-size: 0.95rem;
+        }
+
+        .bottom-links a {
+            color: #7f543b;
+            text-decoration: none;
+            background: #f2e1d5d9;
+            padding: 0.4rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 420;
+            border: 1px solid transparent;
+            transition: 0.2s;
+            backdrop-filter: blur(2px);
+        }
+
+        .bottom-links a:hover {
+            background: #e6cdbb;
+            border-color: #bc927b;
+            transform: scale(1.02);
+        }
+
+        .bottom-links .main-link {
+            background: #dabaa6;
+            color: #2d1e14;
+            font-weight: 470;
+            padding: 0.5rem 1.8rem;
+            border-radius: 60px;
+            box-shadow: 0 2px 8px rgba(140, 90, 60, 0.12);
+        }
+
+        .bottom-links .main-link:hover {
+            background: #cbab94;
+        }
+
+        .footnote {
+            text-align: center;
+            margin-top: 1.6rem;
+            font-size: 0.8rem;
+            color: #8b6f5b;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 580px) {
+            .page-card {
+                padding: 1.8rem 1rem;
+                border-radius: 2.4rem 1rem 2.4rem 1rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .cards {
+                flex-direction: column;
+            }
+            .card-item {
+                flex: 1 1 auto;
+            }
+            .intro-block {
+                padding: 1.2rem;
+            }
+            .bottom-links {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <!-- hero -->
+        <div class="hero">
+            <h1>华体会 · 一处温和的角落</h1>
+            <div class="tagline">不喧哗 · 自有声</div>
+        </div>
+
+        <!-- 优势区 -->
+        <div class="cards">
+            <div class="card-item">
+                <h3>轻语境</h3>
+                <p>不堆砌术语，用最自然的语言连接每一个想要了解「华体会」背后脉络的人。</p>
+            </div>
+            <div class="card-item">
+                <h3>有温度</h3>
+                <p>每一个细节都经过梳理，留下的是让人感到安心的信息与节奏，不催促，不打扰。</p>
+            </div>
+            <div class="card-item">
+                <h3>可延伸</h3>
+                <p>从关键词出发，向更广的主题自然生长，既独立成篇，又彼此呼应。</p>
+            </div>
+        </div>
+
+        <!-- 说明区 -->
+        <div class="intro-block">
+            <h2>从关键词开始，缓缓展开</h2>
+            <p>「华体会」三个字本身就像一把钥匙。它让人联想到的不仅是一个名字，更是一种围绕内容、体验与关注的集合。当我们谈论它时，其实是在谈论如何让信息变得可亲近——没有距离感，也没有多余的装饰。</p>
+            <p>这个页面试图还原的，正是这样一种氛围：它不急于给出定义，而是陪伴你慢慢了解一个话题的各个侧面。如果你愿意进一步探索，可以随时通过下方链接去感受完整的<a href="https://siteweb-hth.com.cn">华体会</a>世界。那里有更多经过梳理的内容，等待与你相遇。</p>
+            <div class="link-sentence">
+                🌱 一个提醒：最好的了解往往发生在放松的状态里。
+            </div>
+        </div>
+
+        <!-- FAQ摘要 -->
+        <div class="faq-summary">
+            <h4>偶尔会浮现的问题</h4>
+            <div class="faq-item">
+                <strong>「华体会」主要关注什么？</strong>
+                <p>更偏向于主题式的内容聚合与温和的信息呈现，不设限领域，但特别在意表达的质地与真诚感。</p>
+            </div>
+            <div class="faq-item">
+                <strong>这个页面和网站是什么关系？</strong>
+                <p>它是一个侧面的入口，用来展示从关键词出发的叙事风格，而完整的结构与更多内容则保留在主要站点里。</p>
+            </div>
+            <div class="faq-item">
+                <strong>我能在这里找到什么？</strong>
+                <p>一篇安静的介绍，几个经过思考的卡片，以及一条通往更广阔内容的路径。</p>
+            </div>
+        </div>
+
+        <!-- 底部链接 -->
+        <div class="bottom-links">
+            <a href="https://siteweb-hth.com.cn" class="main-link">华体会</a>
+            <a href="https://siteweb-hth.com.cn">华体会</a>
+            <a href="https://siteweb-hth.com.cn">华体会</a>
+        </div>
+        <div class="footnote">—— 慢慢来，比较快 ——</div>
+    </div>
+</body>
+</html>
