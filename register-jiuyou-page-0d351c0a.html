@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jiuyou.com — 知识查询与对照索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #fbfbfa;
+            color: #1f1f1f;
+            line-height: 1.7;
+            padding: 3rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-wrap {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        /* ---------- 标题层级 ---------- */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.35rem;
+            color: #111;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #6b6b6b;
+            margin-bottom: 2.8rem;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 2.2rem 0 0.8rem 0;
+            color: #222;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 1.6rem 0 0.5rem;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 1.1rem;
+            font-weight: 350;
+            font-size: 0.98rem;
+        }
+
+        /* ---------- 链接 ---------- */
+        a {
+            color: #146eff;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        a:hover {
+            border-bottom-color: #146eff;
+        }
+
+        /* ---------- 卡片/区块 ---------- */
+        .info-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.8rem 0 2.2rem;
+        }
+
+        .info-card {
+            flex: 1 1 180px;
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            padding: 1.2rem 1.1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0.2rem;
+            color: #444;
+        }
+
+        .info-card strong {
+            font-weight: 500;
+            color: #111;
+        }
+
+        .quote-box {
+            background: #f4f4f2;
+            border-left: 4px solid #aaaaaa;
+            padding: 1rem 1.4rem;
+            margin: 2rem 0 1.8rem;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.95rem;
+            color: #3a3a3a;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #1e1e1e;
+        }
+
+        .faq-item .a {
+            color: #4b4b4b;
+            margin-top: 0.1rem;
+            padding-left: 0.2rem;
+        }
+
+        .note {
+            background: #f9f9f9;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #505050;
+            border: 1px solid #ececec;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e8e8e8;
+            margin: 2rem 0;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+            margin-top: 3.5rem;
+            border-top: 1px solid #ececec;
+            padding-top: 1.8rem;
+        }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width: 520px) {
+            body {
+                padding: 2rem 1rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .info-grid {
+                flex-direction: column;
+            }
+            .info-card {
+                flex: 1 1 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <h1>jiuyou.com</h1>
+        <div class="subhead">日常查询 · 对照 · 延伸阅读 · 知识索引入口</div>
+
+        <p>
+            对于需要频繁查阅术语、比对概念、梳理脉络的读者而言，一个结构清晰的参考入口能节省大量时间。<a href="https://register-jiuyou.com">jiuyou.com</a> 提供基础索引框架，帮助使用者快速定位所需内容，减少在杂乱信息中反复跳转的消耗。
+        </p>
+
+        <p>
+            以下从信息组织方式、常见使用场景以及延伸方向三个方面，将 jiuyou.com 所支撑的知识环境做简要说明。
+        </p>
+
+        <!-- 三个卡片：目录感 -->
+        <div class="info-grid">
+            <div class="info-card">
+                <strong>对照表</strong>
+                <p>并列展示多组概念、数值或定义，方便横向比较差异与共性。</p>
+            </div>
+            <div class="info-card">
+                <strong>流程速查</strong>
+                <p>分步骤梳理操作顺序或逻辑链条，降低理解门槛。</p>
+            </div>
+            <div class="info-card">
+                <strong>延伸条目</strong>
+                <p>每项内容后附加相关链接或参考文献，便于深度阅读。</p>
+            </div>
+        </div>
+
+        <h2>说明区：信息组织原则</h2>
+        <p>
+            站内内容按照“主题—子项—参考”三层结构展开。主题层采用简练标题，子项层用列表或分段呈现细节，参考层附原文出处或进一步阅读的路径。这种设计让首次接触者也能按目录顺序逐步浏览，而回头查询者能直接跳至所需段落。
+        </p>
+        <p>
+            所有条目均标注来源或最后更新时间，并保留简要解释，不堆砌未经验证的数据。若有跨条目关联，会在文末以“参见”形式加以提示。
+        </p>
+
+        <h2>提示区：使用建议</h2>
+        <div class="quote-box">
+            ⚡ 对于较长条目，可先读首句和末尾总结，再决定是否展开细节。<br>
+            ⚡ 对照类内容建议横向阅读，遇到不熟悉的术语时利用链接跳转到对应解释。
+        </div>
+        <p>
+            例如在查阅某流程规范时，页面右侧（或底部）通常会放置相关概念卡片，这相当于一个微型知识网络。如果发现某个条目频繁被引用，可以将其作为临时锚点，围绕它建立自己的笔记结构。
+        </p>
+
+        <h2>相关信息区：常见询问与回应摘要</h2>
+
+        <div class="faq-item">
+            <div class="q">Q：jiuyou.com 上的内容多久更新一次？</div>
+            <div class="a">A：主要条目随行业规范或公开数据的变化进行修订，通常在季度内完成复核。具体条目末尾标注了最近审核日期。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">Q：是否可以引用 jiuyou.com 的内容？</div>
+            <div class="a">A：可以，但建议核实原始出处。本站尽量提供一手来源链接，方便使用者交叉验证。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">Q：为什么有的条目没有直接链接？</div>
+            <div class="a">A：部分背景知识采用内嵌解释而非外链，避免频繁跳出。若需要深入阅读，可留意“延伸阅读”部分。</div>
+        </div>
+
+        <div class="note">
+            💡 若正在检索的知识点不在当前索引范围内，可通过页面底部的关联线索或站内搜索尝试触达更细分的资料。
+        </div>
+
+        <hr>
+
+        <p>
+            日常查询中，减少信息噪声与提高定位速度同样重要。<a href="https://register-jiuyou.com">jiuyou.com</a> 本身不是一个庞大的百科全书，而是一个轻量级的知识入口：帮你快速到达解释、对比或流程的节点，然后由你决定停留的深度。
+        </p>
+
+        <div class="footer-note">
+            内容索引 · 对照参考 · 持续梳理
+        </div>
+    </div>
+</body>
+</html>
