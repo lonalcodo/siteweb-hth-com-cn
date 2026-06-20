@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>指南·jiuyou.com</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f9fc;
+      color: #1c2e3a;
+      line-height: 1.6;
+      padding: 0 1rem 2rem;
+    }
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    /* —— hero 横幅 —— */
+    .hero {
+      background: linear-gradient(135deg, #d0e7f0 0%, #b2d4dd 100%);
+      border-radius: 2rem;
+      padding: 3rem 2rem;
+      margin: 2rem 0 2.5rem;
+      text-align: center;
+      box-shadow: 0 6px 14px rgba(0, 60, 70, 0.08);
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      color: #0a3b44;
+      margin-bottom: 0.75rem;
+    }
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #1d5663;
+      background: rgba(255,255,255,0.55);
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+      border: 1px solid #aacbd6;
+    }
+    .hero .tagline {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      color: #1b4b57;
+      border-left: 4px solid #418e9e;
+      padding-left: 1rem;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255,255,255,0.3);
+      border-radius: 0 12px 12px 0;
+    }
+    /* —— 网格卡片 —— */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.8rem 0 2.2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 70, 80, 0.06);
+      border: 1px solid #d9e9ef;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0, 80, 90, 0.08);
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 570;
+      color: #166475;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card h3::before {
+      content: "▹";
+      color: #3b97a9;
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+    .card p {
+      color: #2d4f5a;
+      font-size: 0.96rem;
+      margin-bottom: 0.6rem;
+    }
+    .card .note {
+      background: #e8f3f7;
+      border-radius: 40px;
+      padding: 0.2rem 0.9rem;
+      font-size: 0.82rem;
+      display: inline-block;
+      color: #156b7a;
+      margin-top: 0.3rem;
+    }
+    /* —— 介绍区块（三段自然） —— */
+    .intro-block {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 2rem 1.8rem;
+      margin: 2.2rem 0;
+      border: 1px solid #d3e4eb;
+    }
+    .intro-block h2 {
+      font-size: 1.5rem;
+      font-weight: 530;
+      color: #064753;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid #aacfd9;
+      padding-bottom: 0.4rem;
+      display: inline-block;
+    }
+    .intro-block p {
+      margin-bottom: 1rem;
+      color: #1f404b;
+    }
+    .intro-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+    .intro-flex > div {
+      flex: 1 1 200px;
+      background: #f1f8fb;
+      padding: 1.2rem 1rem;
+      border-radius: 1.2rem;
+    }
+    .intro-flex strong {
+      color: #126d7e;
+    }
+    .faq-mini {
+      background: #eaf4f8;
+      border-radius: 1.4rem;
+      padding: 1.5rem 1.5rem 1rem;
+      margin: 2rem 0;
+    }
+    .faq-mini summary {
+      font-weight: 560;
+      color: #105a69;
+      cursor: pointer;
+      padding: 0.3rem 0;
+    }
+    .faq-mini p {
+      margin-top: 0.5rem;
+      color: #1d4a55;
+    }
+    /* —— 页尾 —— */
+    .site-footer {
+      text-align: center;
+      padding: 1.8rem 1rem 0.8rem;
+      border-top: 1px solid #c7dbe4;
+      margin-top: 2rem;
+      color: #306d7b;
+    }
+    .site-footer a {
+      color: #096473;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 480;
+    }
+    .site-footer a:hover {
+      background: #cbdfe7;
+      text-decoration: none;
+      border-radius: 6px;
+      padding: 0 4px;
+    }
+    .meta-note {
+      font-size: 0.85rem;
+      color: #4d7c88;
+      margin-top: 0.7rem;
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .hero { padding: 2rem 1rem; }
+      .card { padding: 1.4rem; }
+      .intro-block { padding: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <!-- hero -->
+  <header class="hero">
+    <h1>jiuyou.com · 指南页</h1>
+    <span class="sub">简要说明 · 访问提醒</span>
+    <div class="tagline">
+      一份关于平台背景与使用思路的整理，供首次接触者参考。
+    </div>
+  </header>
+
+  <!-- 网格卡片：特点 & 场景 -->
+  <section class="grid">
+    <div class="card">
+      <h3>简明定位</h3>
+      <p>面向中文信息场景，提供结构化的内容组织方式。界面偏重浏览效率，减少多余跳转。</p>
+      <span class="note">非社交 · 非论坛</span>
+    </div>
+    <div class="card">
+      <h3>访问提醒</h3>
+      <p>直接使用浏览器访问即可，无需安装额外工具。建议保持网络通畅，部分资源加载依赖域名解析。</p>
+      <span class="note">https 加密</span>
+    </div>
+    <div class="card">
+      <h3>适用场景</h3>
+      <p>日常查阅、信息筛选、轻量对比。适合需要快速获取整理后内容的用户。</p>
+      <span class="note">没有强推送</span>
+    </div>
+  </section>
+
+  <!-- 三段自然介绍 -->
+  <section class="intro-block">
+    <h2>背景与说明</h2>
+    <div class="intro-flex">
+      <div>
+        <strong>内容基调</strong><br>
+        平台以分类聚合为主，不生产原始信息，更侧重整合与索引。多数模块保持定期更新，但不对第三方来源做额外保证。
+      </div>
+      <div>
+        <strong>使用习惯</strong><br>
+        建议首次访问时先浏览导航区域，熟悉分区逻辑。页面内嵌的指引卡片可辅助快速定位，避免重复查找。
+      </div>
+      <div>
+        <strong>技术特征</strong><br>
+        采用静态页面＋轻量交互，响应速度较快。移动端适配良好，横竖屏均可正常阅读。
+      </div>
+    </div>
+    <p style="margin-top:1.2rem;">
+      无论你是出于资讯搜集还是日常参考，<a href="https://zh-beta-jiuyou.com">jiuyou.com</a> 都可以作为一个起点。
+      它不追踪个人行为，不设置内容壁垒，大部分区域对所有访客开放。
+    </p>
+  </section>
+
+  <!-- FAQ 摘要 -->
+  <details class="faq-mini">
+    <summary>FAQ 摘要 – 常见疑问</summary>
+    <p><strong>是否需要注册？</strong> 目前浏览全部公开内容无需账号，也没有强制登录入口。</p>
+    <p><strong>信息更新频率？</strong> 主要栏目按周或双周刷新，部分数据源同步存在延迟。</p>
+    <p><strong>链接失效怎么办？</strong> 可尝试刷新页面或稍后重试，也可通过站内导航查找替代入口。</p>
+  </details>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <p>
+      关于 <a href="https://zh-beta-jiuyou.com">jiuyou.com</a> 的索引说明 · 版本参考 2025
+    </p>
+    <div class="meta-note">
+      本页为独立介绍页，内容仅作指引用途。
+    </div>
+  </footer>
+</div>
+</body>
+</html>
